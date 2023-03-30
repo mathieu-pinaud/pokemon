@@ -20,15 +20,3 @@ class Type(pokemon.Pokemon, feu.Feu, eau.Eau, terre.Terre, normal.Normal):
     
     def pokeprint(self):
         print('Nom:', self.GetNom(), '\nType:', self.typeNom, '\nVie:', self.GetPv(), '\nAttaque', self.attaque, '\nDeffense', self.deffense) 
-
-salameche = Type('feu', 'Salameche')
-carapuce = Type('eau', 'carapuce')
-bulbizarre = Type('terre', 'bulbizarre')
-ratatouille = Type('normal', 'Ratatouille')
-salameche.pokeprint()
-print()
-carapuce.pokeprint()
-print()
-bulbizarre.pokeprint()
-print()
-ratatouille.pokeprint()

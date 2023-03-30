@@ -1,6 +1,7 @@
 class Eau:
     def __init__(self):
         self.typeNom = 'Eau'
-        self.typePv = 20
-        self.typeAttaque = 5
-        self.typeDeffense = 5
+        self.typePv = 44
+        self.typeAttaque = 48
+        self.typeDeffense = 65
+        self.typeResistance =  [('Eau' , 1), ('Feu' , 0.5), ('Terre', 2), ('Normal', 0.75)]
