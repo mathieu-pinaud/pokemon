@@ -19,7 +19,7 @@ class Menu(type.Type):
             if j == 1:
                 return(self.__choix_pokemon())
             elif j == 2:
-                return(self.__choix_pokemon())
+                return(self.__creation_pokemon())
             else:
                 j = -1
                 print('saisie incorrecte')
@@ -41,3 +41,22 @@ class Menu(type.Type):
             else:
                 print('saisie incorrecte')
                 i = -1
+
+    def __creation_pokemon(self):
+        i = 0
+        l_types = ['feu', 'eau', 'terre', 'normal']
+        nom = input('Donnez un nom ')
+        print('Tapez 1 pour creer un pokemon de type feu')
+        print('Tapez 2 pour creer un pokemon de type eau')
+        print('Tapez 3 pour creer un pokemon de type terre')
+        print('Tapez 4 pour creer un pokemon de type normal')
+        while i == 0:
+            try:
+                i = int(input())
+            except ValueError:
+                i = 0
+            if (i > 0 and i < 5):
+                return(type.Type(l_types[i - 1], nom))
+            else:
+                print("Saisie incorecte")
+                i = 0            

@@ -52,22 +52,25 @@ class Combat(menu.Menu):
             self.poke_adv.SetPv(self.poke_adv.GetPv() - (self.mes_dommages - self.poke_adv.deffense))
         else:
             self.poke_adv.SetPv(self.poke_adv.GetPv() + (self.mes_dommages - self.poke_adv.deffense))
+        if self.mon_poke.GetPv() < 0:
+            self.mon_poke.SetPv(0)
+        if self.poke_adv.GetPv() < 0:
+            self.poke_adv.SetPv(0)
 
     def __soin(self):
         self.mon_poke.SetPv(100 + self.mon_poke.typePv)
         self.poke_adv.SetPv(100 + self.poke_adv.typePv)
     
     def combat(self):
-        print(self.mes_dommages, self.dommages_adv)
         i = 1
         while (self.__verifier_vie() ==  0):
-            print('Tour', i)
+            print('\nTour', i)
             i +=1
             self.__enleve_pv()
             self.mon_poke.pokeprint()
             print()
             self.poke_adv.pokeprint()
-            print('\n')
+            print()
             time.sleep(1.5)
         if (self.__verifier_vie() == 3):
             print('Egalité')
